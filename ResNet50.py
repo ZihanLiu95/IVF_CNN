@@ -13,6 +13,7 @@ import random
 
 random.seed(2018)
 np.random.seed(2018)
+
 # Params
 batch_size = 16
 epochs = 50
@@ -23,8 +24,7 @@ save_file_name = 'resnet50_2.h5'
 file = np.load('224_npz/split_data_shuffle1.npz')
 [x_train, y_train, x_val, y_val, x_test, y_test] = [file['x_train'], file['y_train'] - 1,
                                                     file['x_val'], file['y_val'] - 1,
-               file['x_test'],
-               file['y_test'] - 1]
+                                                    file['x_test'], file['y_test'] - 1]
 # ## computer class_weight
 # class_weight = compute_class_weight('balanced', np.unique(y_train), y_train)
 # class_weight_dict = dict(enumerate(class_weight))
